@@ -67,3 +67,6 @@ ports/javascript/node_modules
 
 # MacOS desktop metadata files
 .DS_Store
+
+# no dir esp-idf
+esp-idf/
