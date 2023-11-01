@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
 #
-# code change:
+# SOURCE CHANGE:
 # 
 # https://github.com/orgs/micropython/discussions/12027
 # /home/work/source/git/micropython-lvgl/py/stackctrl.c
 # #pragma GCC diagnostic ignored "-Wdangling-pointer=1"
 #
+
+#
+# CONFIG CHANGE:
+# $worker_dir/cfg/lv_conf_user.h
+# must make_clean.sh after update of lv_conf.h 
 
 source ./arkon.sh 
 
@@ -26,13 +31,19 @@ this_image=$this_build/firmware.bin
 #frozen_manifest="/home/work/source/git/creator-cnc-anolex/manifest.py"
 #        FROZEN_MANIFEST="$frozen_manifest" \
 
+LV_CFLAGS=(
+    -DLV_COLOR_DEPTH=16
+    -DLV_CONF_INCLUDE_SIMPLE=1
+    -DLV_CONF_PATH="$worker_dir/cfg/lv_conf_user.h"
+)
+
 invoke_build() {
 
     make -C mpy-cross
     
     make -C ports/esp32 \
-        LV_CFLAGS="-DLV_COLOR_DEPTH=16" \
         BOARD=$this_board \
+        LV_CFLAGS="${LV_CFLAGS[*]}" \
     
 }
 
