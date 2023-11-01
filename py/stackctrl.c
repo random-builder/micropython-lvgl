@@ -24,6 +24,8 @@
  * THE SOFTWARE.
  */
 
+#pragma GCC diagnostic ignored "-Wdangling-pointer=1"
+
 #include "py/runtime.h"
 #include "py/stackctrl.h"
 
