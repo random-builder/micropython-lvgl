@@ -20,11 +20,15 @@ select font type
     folder = static
     make local copy to folder = worker/font  
 
-convert ttf to c, XX = 16,24,32, use name with underscore
+convert ttf to c, XX = 16,24,32, 
+    use name:
+        * in lower case
+        * with underscore
+        * with lv_font prefix
 
     https://lvgl.io/tools/fontconverter
     
-    Name: Montserrat_Bold_XX
+    Name: lv_font_montserrat_bold_XX
     Size: XX
     Bpp: 4
     File: Montserrat-Bold.ttf
@@ -34,9 +38,9 @@ convert ttf to c, XX = 16,24,32, use name with underscore
 
 ### include in lv_conf_user.h
 
-    #define LV_FONT_CUSTOM_DECLARE \
-        LV_FONT_DECLARE(Montserrat_Bold_16) \
-        LV_FONT_DECLARE(Montserrat_Bold_24) \
-        LV_FONT_DECLARE(Montserrat_Bold_32) \
+#define LV_FONT_CUSTOM_DECLARE \
+    LV_FONT_DECLARE(lv_font_montserrat_bold_16) \
+    LV_FONT_DECLARE(lv_font_montserrat_bold_24) \
+    LV_FONT_DECLARE(lv_font_montserrat_bold_32) \
 
     note: since this is git submodule, change will not be committed with top level commit 
