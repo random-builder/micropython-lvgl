@@ -10,7 +10,7 @@
 
 #
 # CONFIG CHANGE:
-# $worker_dir/cfg/lv_conf_user.h
+# $worker_dir/conf/lv_conf_user.h
 # must make_clean.sh after update of lv_conf.h 
 
 source ./arkon.sh 
@@ -34,7 +34,7 @@ this_image=$this_build/firmware.bin
 LV_CFLAGS=(
     -DLV_COLOR_DEPTH=16
     -DLV_CONF_INCLUDE_SIMPLE=1
-    -DLV_CONF_PATH="$worker_dir/cfg/lv_conf_user.h"
+    -DLV_CONF_PATH="$worker_dir/conf/lv_conf_user.h"
 )
 
 invoke_build() {
@@ -64,4 +64,9 @@ install_firmware() {
 }
 
 invoke_build
+
 install_firmware
+
+#
+#
+#
