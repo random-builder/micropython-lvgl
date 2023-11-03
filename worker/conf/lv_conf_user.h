@@ -422,6 +422,9 @@
     LV_FONT_DECLARE(lv_font_montserrat_bold_16) \
     LV_FONT_DECLARE(lv_font_montserrat_bold_24) \
     LV_FONT_DECLARE(lv_font_montserrat_bold_32) \
+    LV_FONT_DECLARE(lv_font_spacemono_16) \
+    LV_FONT_DECLARE(lv_font_spacemono_24) \
+    LV_FONT_DECLARE(lv_font_spacemono_32) \
 
 
 /*Always set a default font*/
