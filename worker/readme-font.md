@@ -47,10 +47,9 @@ convert ttf to c, XX = 16,24,32,
 
 ### steps 2
 
-
 download ttf
     https://fonts.google.com/specimen/Space+Mono
-    font size = Regualr 400
+    font size = Regular 400
     
 select font type
     make local copy to folder = worker/font
@@ -71,6 +70,32 @@ convert ttf to c, XX = 16,24,32,
 
     make local copy to folder = /micropython-lvgl/lib/lv_bindings/lvgl/src/font_user
 
+### steps 3
+
+download ttf
+    https://fonts.google.com/specimen/Roboto+Mono
+    font size = Medium 500
+
+select font type
+    make local copy to folder = worker/font
+
+convert ttf to c, XX = 16,24,28,32, 
+    use name:
+        * in lower case
+        * with underscore
+        * with lv_font prefix
+
+    https://lvgl.io/tools/fontconverter
+    
+    Name: lv_font_robotomono_medi_XX
+    Size: XX
+    Bpp: 4
+    File: RobotoMono-Medium.ttf
+    Range: 0x20-0x7F
+
+    make local copy to folder = /micropython-lvgl/lib/lv_bindings/lvgl/src/font_user
+
+
 ### include in lv_conf_user.h
 
 #define LV_FONT_CUSTOM_DECLARE \
@@ -80,6 +105,12 @@ convert ttf to c, XX = 16,24,32,
     LV_FONT_DECLARE(lv_font_spacemono_16) \
     LV_FONT_DECLARE(lv_font_spacemono_24) \
     LV_FONT_DECLARE(lv_font_spacemono_32) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_16) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_24) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_28) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_32) \
 
     note: since this is git submodule, change will not be committed with top level commit 
+    
+    
     

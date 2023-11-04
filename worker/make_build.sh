@@ -51,8 +51,19 @@ invoke_build() {
 install_firmware() {
 
     cd $this_esp32
-
+    
     echo "### flash file"
+
+    if [ ! -e $this_image ] ; then
+        echo "### no file: $this_image"
+        exit 1
+    fi
+    
+    if [ ! -e $this_port ] ; then
+        echo "### no port: $this_port"
+        exit 1
+    fi
+    
     ls -las $this_image
     
     echo "### flash erase"

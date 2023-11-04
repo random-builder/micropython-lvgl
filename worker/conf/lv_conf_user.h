@@ -425,6 +425,10 @@
     LV_FONT_DECLARE(lv_font_spacemono_16) \
     LV_FONT_DECLARE(lv_font_spacemono_24) \
     LV_FONT_DECLARE(lv_font_spacemono_32) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_16) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_24) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_28) \
+    LV_FONT_DECLARE(lv_font_robotomono_medi_32) \
 
 
 /*Always set a default font*/
